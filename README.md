@@ -20,10 +20,9 @@
 
 ## 🏠 About
 
-<!-- ![Teaser](./imgs/intro.png) -->
-<div style="text-align: center;">
-    <img src="./imgs/intro.png" alt="Dialogue_Teaser" width=50% >
-</div>
+<p align="center">
+  <img src="./imgs/intro.png" align="center" width="50%">
+</p>
 We introduce a new neuroscience task: decoding 3D visual perception from EEG signals, a neuroimaging technique that enables real-time monitoring of neural dynamics enriched with complex visual cues.
 To provide the essential benchmark, we first present <b>EEG-3D</b>, a pioneering dataset featuring multimodal analysis data and extensive EEG recordings from 12 subjects viewing 72 categories of 3D objects rendered in both videos and images.
 Furthermore, we propose <b>Neuro-3D</b>, a 3D visual decoding framework based on EEG signals. This framework adaptively integrates EEG features derived from static and dynamic stimuli to learn complementary and robust neural representations, which are subsequently utilized to recover both the shape and color of 3D objects through the proposed diffusion-based colored point cloud decoder.
