@@ -1,0 +1,11 @@
+open3d==0.18.0
+accelerate==0.28.0
+omegaconf==2.3.0
+Pillow==10.2.0
+torchvision==0.14.0
+timm==0.9.16
+diffusers==0.27.2
+tqdm==4.66.2
+einops==0.8.0
+pandas==2.2.1
+matplotlib==3.8.3
