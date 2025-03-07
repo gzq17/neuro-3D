@@ -85,22 +85,24 @@ The data download link will be announced soon. The directory should look like th
 root_path
 ├── EEGdata
 ├──── sub01
-├──────── sub01_test_data_1s_250Hz.npy
-├──────── sub01_test_data_6s_100Hz.npy
-├──────── sub01_train_data_1s_250Hz.npy
-├──────── sub01_train_data_6s_100Hz.npy
+├──────── process_data_1s_250Hz.npy
+├──────── process_data_6s_100Hz.npy
 ├── point_cloud
 ├── video_new
 └── clip_feature.pth
 ```
 
-where `clip_feature.pth` is the CLIP feature corresponding to text, video, and point cloud extracted from the pre-trained model.
+where `clip_feature.pth` is the CLIP feature corresponding to text, video, and point cloud extracted from the pre-trained model. Run the code to divide the dataset:
+
+```bash
+python eeg_data_process/EEG_organization.py
+```
 
 ### Training
 
 1. The Training of Classification Model
 ```bash
-python classification/retri_shape_color.py --root_path root_path --sub 'sub25'
+python classification/retri_shape_color.py --root_path root_path --sub 'sub01'
 ```
 2. The Training of Reconstruction Model
 
