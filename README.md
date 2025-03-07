@@ -32,6 +32,7 @@ To the best of our knowledge, we are the first to explore EEG-based 3D visual de
 ## 🔥 News
 - [2024-11-19] We release the training and inferencing codes.
 - [2024-11-19] We release the [paper](https://arxiv.org/abs/2411.12248) of Neuro-3D.
+- [2025-03-07] Our paper is accepted to <b>CVPR2025</b>.
 
 ## 🔍 Overview
 
