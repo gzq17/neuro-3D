@@ -2,7 +2,7 @@ import argparse
 
 def parse_args():
     parser = argparse.ArgumentParser()
-    parser.add_argument('--data_path', type=str, default='/disk3/guozhanqiang/CVPR2025Data/')
+    parser.add_argument('--data_path', type=str, default='')
     parser.add_argument('--model_save_path', type=str, default='model/point_generate/')
     parser.add_argument('--sub', type=str, default='sub10')
     parser.add_argument('--task', type=str, default='train')

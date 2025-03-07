@@ -18,9 +18,6 @@ from eeg_data_process.clip_loss import ClipLoss
 import open3d as o3d
 from accelerate import DistributedDataParallelKwargs
 import time
-###train: python recon_main.py --generation_type 'shape' --sub 'sub25' --in_channels 1027 --pretrain_model retri_color_shape_11-05_11-33_VideoImageEEGClassifyColor3_color_video_fea_time_len1
-###test: python recon_main.py --generation_type 'shape' --task 'sample' --sub 'sub11' --in_channels 1027 --checkpoint_resume 
-### '/home/bingxing2/ailab/ailab_share/scxlab0036/ai4neuro-gzq21/model/point_generate/shape/sub11/2024-10-31--00-10-05/checkpoint-40000.pth'
 
 def get_parameter_number(model):
     total_num = sum(p.numel() for p in model.parameters())

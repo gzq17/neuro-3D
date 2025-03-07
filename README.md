@@ -106,16 +106,16 @@ python classification/retri_shape_color.py --root_path root_path --sub 'sub01'
 ```
 2. The Training of Reconstruction Model
 
-The name of the model saved in step 1 is denoted as `cls_model`, such as  `retri_color_shape_11-05_11-33_VideoImageEEGClassifyColor3_color_video_fea_time_len1`.
+The name of the model saved in step 1 is denoted as `cls_model`, such as  `retri_color_shape_03-07_21-39_VideoImageEEGClassifyColor3_color_video_fea_time_len1`.
 
 ```bash
-python recon_main.py --data_path root_path --generation_type 'shape' --sub 'sub25' --in_channels 1027 --pretrain_model cls_model
+python recon_main.py --data_path root_path --generation_type 'shape' --sub 'sub01' --in_channels 1027 --pretrain_model cls_model
 ```
 
 3. The Training of Color Prediction Model
 
 ```bash
-python add_color_main.py --data_path root_path --generation_type 'color' --in_channel 1033 --sub 'sub25' --max_steps 40000 --checkpoint_freq 5000 --pretrain_model cls_model
+python add_color_main.py --data_path root_path --generation_type 'color' --in_channel 1033 --sub 'sub01' --max_steps 40000 --checkpoint_freq 5000 --pretrain_model cls_model
 ```
 
 ### Inferencing
@@ -123,7 +123,7 @@ python add_color_main.py --data_path root_path --generation_type 'color' --in_ch
 1. Inferencing of Reconstruction Model
 
 ```bash
-python recon_main.py --data_path root_path --generation_type 'shape' --task 'sample' --sub 'sub25' --in_channels 1027 --checkpoint_resume chechpoint_path
+python recon_main.py --data_path root_path --generation_type 'shape' --task 'sample' --sub 'sub03' --in_channels 1027 --checkpoint_resume chechpoint_path
 ```
 
 2. Inferencing of Color Prediction Model

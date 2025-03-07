@@ -28,11 +28,10 @@ class AllDataFeatureTwoEEG(Dataset):
             if name[-6:-4] in remove_name:
                 continue
             self.name_list.append(name[:-4])
-        excel_file = self.data_path + 'point_cloud_simple/output.xlsx'
+        excel_file = self.data_path + 'color_label.xlsx'
         read_df = pd.read_excel(excel_file)
         name2color_label = {}
         for index, row in read_df.iterrows():
-            # 这里你可以访问每一行的值并进行相应的操作
             name2color_label[row['name']] = int(row['label'])
         self.name_list = np.array(self.name_list).reshape(72, -1)
         self.point_data = np.zeros((self.name_list.shape[0], self.name_list.shape[1], 8192, 6))

@@ -19,10 +19,6 @@ from eeg_data_process.clip_loss import ClipLoss
 import open3d as o3d
 from accelerate import DistributedDataParallelKwargs
 import math
-### train: python add_color_main.py --generation_type 'color' --in_channel 1033 --sub 'sub25' --max_steps 40000 --checkpoint_freq 5000 --pretrain_model retri_color_shape_11-05_11-33_VideoImageEEGClassifyColor3_color_video_fea_time_len1
-###test: python add_color_main.py --generation_type 'color' --task 'sample' --in_channel 1033 --sub 'sub25' --checkpoint_resume 
-###   '/disk3/guozhanqiang/CVPR2025Data/model/point_generate/color/sub13/2024-10-31--00-07-34/checkpoint-5000.pth' --ply_point_path 
-###   '/disk3/guozhanqiang/CVPR2025Data/model/point_generate/shape/sub13/2024-10-29--23-13-20/checkpoint-80000/'
 
 def get_parameter_number(model):
     total_num = sum(p.numel() for p in model.parameters())

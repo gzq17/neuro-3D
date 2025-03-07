@@ -65,14 +65,6 @@ def train_model(config, eeg_model, dataloader, optimizer, device, text_features_
         
         eeg_data = batch_data['eeg_data'].to(device).float()
         eeg_data2 = batch_data['eeg_data2'].to(device).float()
-        if config["model"] == "MetaEEGClassifyColor":
-            if config['time'] == 1:
-                eeg_data2 = 0
-            elif config['time'] == 2:
-                eeg_data = batch_data['eeg_data2'].to(device).float()
-                eeg_data2 = 0
-            else:
-                exit()
         # img_features = batch_data['color_video_fea'].to(device).float()
         # eeg_data = batch_data['color_video_fea'].to(device).float()
         img_features = batch_data[feature_cls].to(device).float()
@@ -142,14 +134,6 @@ def evaluate_model(config, eeg_model, dataloader, device, text_features_all, img
         for batch_idx, batch_data in enumerate(dataloader):
             eeg_data = batch_data['eeg_data'].to(device).float()
             eeg_data2 = batch_data['eeg_data2'].to(device).float()
-            if config["model"] == "MetaEEGClassifyColor":
-                if config['time'] == 1:
-                    eeg_data2 = 0
-                elif config['time'] == 2:
-                    eeg_data = batch_data['eeg_data2'].to(device).float()
-                    eeg_data2 = 0
-                else:
-                    exit()
             # img_features = batch_data['color_video_fea'].to(device).float()
             # eeg_data = batch_data['color_video_fea'].to(device).float()
             img_features = batch_data[feature_cls].to(device).float()
@@ -329,7 +313,7 @@ import datetime
 
 def parse_args():
     parser = argparse.ArgumentParser()
-    parser.add_argument('--root_path', type=str, default="/disk3/guozhanqiang/CVPR2025Data/")
+    parser.add_argument('--root_path', type=str, default="")
     parser.add_argument('--model', type=str, default="VideoImageEEGClassifyColor3")
     parser.add_argument('--time_cls', type=int, default=1)
     parser.add_argument('--max_len', type=int, default=600)
@@ -337,8 +321,8 @@ def parse_args():
     opt = parser.parse_args()
     return opt
 
-def main(args, sub='sub10'):
-    set_seed(42)
+def main(args, sub='sub03'):
+    set_seed(0)#42
     config = {
         "save_path": args.root_path + "model/retraival/",
         "data_path": args.root_path,
